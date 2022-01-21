@@ -6,23 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/629d3039ca.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
     <div class="list">
-        <%for(var i=0;i<todo.length;i++){%>
-            <p>
-                <%-todo[i]%>
-            </p>
-            <%}%>
-                <form action=<%=page%> method="post">
-                    <input type="text" placeholder="your routine" name="routine" autocomplete="off">
-                    <button type="submit" value="add">add</button>
-                </form>
+        <div class="sidenav">
+            <a href="/"><i class="fas fa-home"></i></a>
+            <a href="/work"><i class="fas fa-briefcase"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="listcontent">
+            <%for(var i=0;i<todo.length;i++){%>
+                <div class="list-item">
+                    <input type="checkbox">
+
+                    <p>
+
+                        <%-todo[i]%>
+                    </p>
+                </div>
+
+                <%}%>
+        </div>
+        <div class="form-input">
+            <form action=<%=page%> method="post">
+                <input type="text" placeholder="your routine" name="routine" autocomplete="off" autofocus>
+                <button type="submit" value="add" style="border-radius:100%;">+</button>
+            </form>
+        </div>
     </div>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>
